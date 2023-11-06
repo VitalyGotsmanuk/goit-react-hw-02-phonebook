@@ -11,7 +11,7 @@ export const Filter = ({
                 <p>Finde contacts by name</p>
                 <input
                     type="text"
-                    name="name"
+                    name="filter"
                     required
                     onChange={onChange}
                     value={value}

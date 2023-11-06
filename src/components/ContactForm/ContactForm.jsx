@@ -26,7 +26,7 @@ export class ContactForm extends Component {
                     name="name"
                     required
                     pattern="^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-                    //onChange={}
+                    //onChange={this.onChange}
                     //value={this.state.name}
                 />
             </label>
@@ -39,7 +39,7 @@ export class ContactForm extends Component {
                     title='Format: XXX-XX-XX'
                     required
                     pattern="^\+?\d{1,4}[ .\-]?\(?\d{1,3}\)?[ .\-]?\d{1,4}[ .\-]?\d{1,4}[ .\-]?\d{1,9}$"
-                    //onChange={}
+                    //onChange={this.onChange}
                     //value={this.state.number}
                 />
             </label>

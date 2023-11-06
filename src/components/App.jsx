@@ -40,9 +40,10 @@ export class App extends Component {
     //console.log("Submit", contact)
   };
 
-  handleFilterChange = event => {
+  handleChange = event => {
     const value = event.target.value;
-    this.setState({ filter: value });
+    const name = event.target.name
+    this.setState({ [name]: value });
   }
 
   filterContacts = (contacts, filter) => {
@@ -50,7 +51,6 @@ export class App extends Component {
     );
   }
 
-  
   handleDeleteContact = contactId => {
     //console.log(contactId)
     this.setState({
@@ -58,15 +58,14 @@ export class App extends Component {
     });
   };
 
-
   render() {
     return (
       <>
-        {/* <h1>2-nd phonebook HW! 👍</h1> */}
-               
+        {/* <h1>2-nd phonebook HW! 👍</h1> */}            
         <Section title='Phonebook' >
           <ContactForm
             //state={this.state}
+            onChange={this.handleChange}
             handleAddContact = {this.handleAddContact}
           />
         </Section>
@@ -74,16 +73,15 @@ export class App extends Component {
         <Section title='Contacts' >
           <Filter
             value={this.state.filter}
-            onChange={this.handleFilterChange}
+            onChange={this.handleChange}
           />
 
           <ContactList
             contacts={this.state.contacts}
-            filtered={this.filterContacts}
+            filter={this.filterContacts}
             handleDeleteContact={this.handleDeleteContact}
           />
-        </Section>
-           
+        </Section>          
       </>
     );
   };
