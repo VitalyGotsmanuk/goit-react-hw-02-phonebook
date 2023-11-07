@@ -40,16 +40,21 @@ export class App extends Component {
     //console.log("Submit", contact)
   };
 
-  handleChange = event => {
+  handleInputChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name
+    const name = event.target.name;
     this.setState({ [name]: value });
+
+    // const filterContact = this.state.contacts.filter(contact => this.state.contacts.name.toLowerCase().includes(value.toLowerCase()))
+
+
   }
 
-  filterContacts = (contacts, filter) => {
-    return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase())
-    );
-  }
+  // filterContacts = (contacts, filter) => {
+  //   return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase())
+  //   );
+  // }
+
 
   handleDeleteContact = contactId => {
     //console.log(contactId)
@@ -73,7 +78,7 @@ export class App extends Component {
         <Section title='Contacts' >
           <Filter
             value={this.state.filter}
-            onChange={this.handleChange}
+            onChange={this.handleInputChange}
           />
 
           <ContactList

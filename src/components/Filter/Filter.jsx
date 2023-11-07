@@ -4,19 +4,17 @@ export const Filter = ({
     onChange
 
 }) => {
-       
-    
+        
     return (
         <label className="">
                 <p>Finde contacts by name</p>
                 <input
                     type="text"
                     name="filter"
-                    required
+                    placeholder="Type to search"
                     onChange={onChange}
                     value={value}
                 />
-            </label>
+        </label>
     )
-
 }
