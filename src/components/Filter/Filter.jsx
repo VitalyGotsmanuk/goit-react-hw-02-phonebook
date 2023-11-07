@@ -1,8 +1,7 @@
 
 export const Filter = ({
-    value,
+    filter,
     onChange
-
 }) => {
         
     return (
@@ -13,7 +12,7 @@ export const Filter = ({
                     name="filter"
                     placeholder="Type to search"
                     onChange={onChange}
-                    value={value}
+                    value={filter}
                 />
         </label>
     )

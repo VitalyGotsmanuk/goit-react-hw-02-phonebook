@@ -24,6 +24,7 @@ export class ContactForm extends Component {
                 <input
                     type="text"
                     name="name"
+                    placeholder='Type name'
                     required
                     pattern="^[a-zA-Zа-яА-Я]+(([' \\-][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
                     //onChange={this.onChange}
@@ -36,7 +37,8 @@ export class ContactForm extends Component {
                 <input
                     type="tel"
                     name="number"
-                    title='Format: XXX-XX-XX'
+                    placeholder="Format: XXX-XX-XX"
+                    title="Format: XXX-XX-XX"
                     required
                     pattern="^\+?\d{1,4}[ .\-]?\(?\d{1,3}\)?[ .\-]?\d{1,4}[ .\-]?\d{1,4}[ .\-]?\d{1,9}$"
                     //onChange={this.onChange}

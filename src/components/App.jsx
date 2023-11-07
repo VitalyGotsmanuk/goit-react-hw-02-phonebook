@@ -44,10 +44,6 @@ export class App extends Component {
     const value = event.target.value;
     const name = event.target.name;
     this.setState({ [name]: value });
-
-    // const filterContact = this.state.contacts.filter(contact => this.state.contacts.name.toLowerCase().includes(value.toLowerCase()))
-
-
   }
 
   // filterContacts = (contacts, filter) => {
@@ -63,7 +59,7 @@ export class App extends Component {
     });
   };
 
-  render() {
+  render() {   
     return (
       <>
         {/* <h1>2-nd phonebook HW! 👍</h1> */}            
@@ -77,13 +73,13 @@ export class App extends Component {
 
         <Section title='Contacts' >
           <Filter
-            value={this.state.filter}
+            filter={this.state.filter}
             onChange={this.handleInputChange}
           />
 
           <ContactList
             contacts={this.state.contacts}
-            filter={this.filterContacts}
+            filter={this.state.filter}
             handleDeleteContact={this.handleDeleteContact}
           />
         </Section>          

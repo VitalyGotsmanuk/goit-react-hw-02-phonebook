@@ -2,13 +2,13 @@ import { ContactItem } from './ContactItem';
 
 //import css from './FriendList.module.css';
 
-export const ContactList = ({ contacts, handleDeleteContact }) => {
-    //console.log(filter)
+export const ContactList = ({ contacts, filter, handleDeleteContact }) => {
 
     return (
         <ul className="{css.friendList}">
             {contacts
-                //.filter(filter => filter.name === filter)
+                .filter((contacts) => contacts.name.toLowerCase().includes(filter.toLowerCase())
+                )
                 .map(contacts => (
                 <ContactItem
                     name={contacts.name}
