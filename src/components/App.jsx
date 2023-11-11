@@ -46,10 +46,10 @@ export class App extends Component {
     this.setState({ [name]: value });
   }
 
-  // filterContacts = (contacts, filter) => {
-  //   return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase())
-  //   );
-  // }
+  filterContacts = (contacts, filter) => {
+    return contacts.filter(contact => contact.name.toLowerCase().includes(filter.toLowerCase())
+    );
+  }
 
   handleDeleteContact = contactId => {
     //console.log(contactId)
@@ -58,7 +58,9 @@ export class App extends Component {
     });
   };
 
-  render() {   
+  render() {
+    const filteredContacts = this.filterContacts(this.state.contacts, this.state.filter);
+
     return (
       <>
         {/* <h1>2-nd phonebook HW! 👍</h1> */}            
@@ -77,7 +79,8 @@ export class App extends Component {
           />
 
           <ContactList
-            contacts={this.state.contacts}
+            contacts={filteredContacts}
+            //contacts={this.state.contacts}
             filter={this.state.filter}
             handleDeleteContact={this.handleDeleteContact}
           />
