@@ -1,10 +1,13 @@
+import css from './Filter.module.css';
+
 export const Filter = ({
     filter,
     onChange
 }) => {
         
     return (
-        <label className="">
+        <div className={css.filter}>
+        <label >
                 <p>Finde contacts by name</p>
                 <input
                     type="text"
@@ -13,6 +16,6 @@ export const Filter = ({
                     onChange={onChange}
                     value={filter}
                 />
-        </label>
+        </label></div>
     )
 }

@@ -51,7 +51,6 @@ export class App extends Component {
   //   );
   // }
 
-
   handleDeleteContact = contactId => {
     //console.log(contactId)
     this.setState({

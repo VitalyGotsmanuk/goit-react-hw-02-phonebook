@@ -1,11 +1,11 @@
 import { ContactItem } from './ContactItem';
 
-//import css from './FriendList.module.css';
+import css from './ContactList.module.css';
 
 export const ContactList = ({ contacts, filter, handleDeleteContact }) => {
 
     return (
-        <ul className="{css.friendList}">
+        <ul className={css.list}>
             {contacts
                 .filter((contacts) => contacts.name.toLowerCase().includes(filter.toLowerCase())
                 )

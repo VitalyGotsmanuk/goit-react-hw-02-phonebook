@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import css from './ContactForm.module.css';
+
 
 export class ContactForm extends Component { 
     
@@ -18,8 +20,9 @@ export class ContactForm extends Component {
 
     render () {
     return (
-        <form onSubmit={this.handleSubmit}>
-            <label className="">
+        <form onSubmit={this.handleSubmit}
+              className={css.formInput}>
+            <label className={css.contactInput}>
                 <p>Name</p>
                 <input
                     type="text"
@@ -47,8 +50,8 @@ export class ContactForm extends Component {
             </label>
             
             <button
-                className="button"
-                type="submit" >Add contact</button>
+                className=""
+                type="submit">Add contact</button>
         </form>
     )
     }
